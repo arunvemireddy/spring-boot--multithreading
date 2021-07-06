@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(path = "/api")
+
 
 public class UserController {
     @Autowired
@@ -43,7 +43,7 @@ public class UserController {
         return  ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @GetMapping(path = "/welcome")
+    @GetMapping(path = "/")
     public ResponseEntity<String> welcomeApi(){
         return ResponseEntity.ok("Hi,How are");
     }
