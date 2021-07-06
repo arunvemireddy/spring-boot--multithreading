@@ -2,6 +2,9 @@ package com.javatechie.executor.api.controller;
 
 import com.javatechie.executor.api.entity.User;
 import com.javatechie.executor.api.service.UserService;
+import org.apache.logging.log4j.LogManager;
+
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,10 +15,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping(path = "/api")
 public class UserController {
+
+    Logger logger= LogManager.getLogger(UserController.class);
+
     @Autowired
     private UserService service;
 
@@ -44,6 +51,7 @@ public class UserController {
 
     @GetMapping(path = "/welcome")
     public ResponseEntity<String> welcomeApi(){
+        logger.info("welcome");
         return ResponseEntity.ok("Hi,How are you");
     }
 }
