@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(path = "/api")
-@CrossOrigin
+
 public class UserController {
     @Autowired
     private UserService service;
