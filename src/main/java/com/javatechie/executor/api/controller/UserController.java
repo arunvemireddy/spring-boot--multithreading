@@ -44,6 +44,6 @@ public class UserController {
 
     @GetMapping(path = "/welcome")
     public ResponseEntity<String> welcomeApi(){
-        return ResponseEntity.ok("Hi");
+        return ResponseEntity.ok("Hi,How");
     }
 }
